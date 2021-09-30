@@ -1,0 +1,715 @@
+<!doctype html>
+<html>
+<head>
+ <title>Prova visual do pequeno teorema de Fermat</title>
+ 
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+
+      <h1><a href="https://ideiasesquecidas.com"> <img src=	"https://ideiasesquecidas.files.wordpress.com/2020/03/forgottenlogo.png" width="90" height = "50"></a> Prova visual do pequeno teorema de Fermat
+	</h1>
+	   
+   <p>Caso n= 4 (cores) e p = 3 (posições)
+   </p>
+
+
+   <p>Cores únicas
+   </p>
+<script type = "text/javascript">
+    var svg1 = d3.select("body")
+        .append("svg")
+        .attr("width", 1000)
+        .attr("height", 5000);
+
+    Desenhar();
+	
+	function Desenhar()
+	{
+	svg1.selectAll("*").remove();
+
+	var x0 =[];
+	var y0= [];
+	var color0 =[];
+	
+	var r0 = 10;
+	var i;
+	var j;
+	
+	//1. Red
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1)+10);
+		color0.push("red");
+	}
+
+	//2. Green
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1)+10);
+		color0.push("green");
+	}
+
+	//3. Blue
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1)+10);
+		color0.push("blue");
+	}
+	
+	//4. white
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(100);
+		y0.push(10 +30*(i-1)+10);
+		color0.push("white");
+	}
+		
+	//G1. red green
+	svg1.append("text")
+			.attr("x", 50)
+			.attr("y", 140)
+			.text("Combinação vermelho-verde")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("green");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("green");
+	color0.push("red");	
+	color0.push("green");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("green");
+	color0.push("green");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("green");
+	color0.push("red");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("green");	
+	color0.push("red");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("red");	
+	color0.push("green");
+
+	//G2. red blue
+	svg1.append("text")
+			.attr("x", 350)
+			.attr("y", 140)
+			.text("Combinação vermelho-azul")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10 + 300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("blue");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40 +300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("blue");
+	color0.push("red");	
+	color0.push("blue");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70 + 300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("blue");
+	color0.push("blue");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150+300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("blue");
+	color0.push("red");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150+300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("blue");	
+	color0.push("red");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150+300);
+		y0.push(10 +30*(i-1) + 150);
+	}
+	color0.push("red");
+	color0.push("red");	
+	color0.push("blue");
+
+	//G3. red white
+		svg1.append("text")
+			.attr("x", 50)
+			.attr("y", 290)
+			.text("Combinação vermelho-branco")
+			.attr("font-size",15)
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("red");
+	color0.push("white");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("white");
+	color0.push("red");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("white");
+	color0.push("white");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("white");
+	color0.push("red");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("red");
+	color0.push("white");	
+	color0.push("red");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("red");
+	color0.push("red");	
+	color0.push("white");
+
+
+	//G4. green blue
+		svg1.append("text")
+			.attr("x", 50+300)
+			.attr("y", 290)
+			.text("Combinação verde-azul")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10 + 300);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("green");
+	color0.push("blue");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40 +300);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("blue");
+	color0.push("green");	
+	color0.push("blue");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70 + 300);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("blue");
+	color0.push("blue");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+300+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("blue");
+	color0.push("green");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+300+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("green");
+	color0.push("blue");	
+	color0.push("green");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+300+150);
+		y0.push(10 +30*(i-1) + 300);
+	}
+	color0.push("green");
+	color0.push("green");	
+	color0.push("blue");
+
+	//G5. green white
+		svg1.append("text")
+			.attr("x", 50)
+			.attr("y", 290+150)
+			.text("Combinação verde-branco")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("green");
+	color0.push("white");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("green");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("white");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("green");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("green");
+	color0.push("white");	
+	color0.push("green");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("green");
+	color0.push("green");	
+	color0.push("white");
+
+	//G6. blue white
+		svg1.append("text")
+			.attr("x", 50+300)
+			.attr("y", 290+150)
+			.text("Combinação azul-branco")
+			.attr("font-size",15)
+
+			for (i = 1; i<=3;i++)
+	{
+		x0.push(10 + 300);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("blue");
+	color0.push("white");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40 +300);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("blue");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70 + 300);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("white");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+300+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("white");
+	color0.push("blue");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+300+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("blue");
+	color0.push("white");	
+	color0.push("blue");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+300+150);
+		y0.push(10 +30*(i-1) + 450);
+	}
+	color0.push("blue");
+	color0.push("blue");	
+	color0.push("white");
+
+	//G7. red green blue
+		svg1.append("text")
+			.attr("x", 50)
+			.attr("y", 290+300)
+			.text("Comb. vermelho-verde-azul")
+			.attr("font-size",15)
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("red");
+	color0.push("green");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("blue");
+	color0.push("red");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("green");
+	color0.push("blue");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("red");
+	color0.push("blue");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("green");
+	color0.push("red");	
+	color0.push("blue");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("blue");
+	color0.push("green");	
+	color0.push("red");
+
+	//G8. red green white
+		svg1.append("text")
+			.attr("x", 50+300)
+			.attr("y", 290+300)
+			.text("Comb. vermelho-verde-branco")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10 + 300 );
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("red");
+	color0.push("green");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+ 300 );
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("white");
+	color0.push("red");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+ 300 );
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("green");
+	color0.push("white");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+300+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("red");
+	color0.push("white");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+300+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("green");
+	color0.push("red");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+300+150);
+		y0.push(10 +30*(i-1) + 600);
+	}
+	color0.push("white");
+	color0.push("green");	
+	color0.push("red");
+
+	//G9. red blue white
+			svg1.append("text")
+			.attr("x", 50)
+			.attr("y", 290+450)
+			.text("Comb. vermelho-azul-branco")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("red");
+	color0.push("blue");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("white");
+	color0.push("red");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("blue");
+	color0.push("white");	
+	color0.push("red");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("red");
+	color0.push("white");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("blue");
+	color0.push("red");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("white");
+	color0.push("blue");	
+	color0.push("red");
+
+
+	//G10. blue green white
+			svg1.append("text")
+			.attr("x", 50+300)
+			.attr("y", 290+450)
+			.text("Comb. azul-verde-branco")
+			.attr("font-size",15)
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10 + 300 );
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("blue");
+	color0.push("green");	
+	color0.push("white");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+ 300 );
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("white");
+	color0.push("blue");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+ 300 );
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("green");
+	color0.push("white");	
+	color0.push("blue");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(10+300+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("blue");
+	color0.push("white");	
+	color0.push("green");
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(40+300+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("green");
+	color0.push("blue");	
+	color0.push("white");
+
+
+	for (i = 1; i<=3;i++)
+	{
+		x0.push(70+300+150);
+		y0.push(10 +30*(i-1) + 750);
+	}
+	color0.push("white");
+	color0.push("green");	
+	color0.push("blue");
+
+
+	//Círculos
+		var circle1 = svg1.selectAll("circle")
+			.data(x0)
+			.enter()
+			.append("circle")
+			.attr("cx", function(d,i){ return (x0[i])+20} )
+			.attr("cy", function(d,i){ return (y0[i])} )
+			.attr("r", r0)
+			.attr("fill", function(d,i){ return (color0[i])} )
+			.attr("stroke", "black");
+
+	}
+	
+  </script>
+</body>
+</html>
